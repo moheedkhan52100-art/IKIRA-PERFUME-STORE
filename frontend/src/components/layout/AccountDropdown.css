@@ -1,0 +1,182 @@
+.account-dropdown {
+  position: relative;
+  z-index: 31;
+}
+.account-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: -10px;
+  z-index: 40;
+  width: min(340px, calc(100vw - 24px));
+  max-height: min(78vh, 620px);
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--ivory);
+  color: var(--chocolate);
+  box-shadow: 0 18px 48px rgb(38 27 23 / 16%);
+  transform-origin: top right;
+  animation: account-dropdown-open 180ms cubic-bezier(.2,.75,.25,1) both;
+}
+.account-dropdown-panel.is-closing {
+  animation: account-dropdown-close 150ms ease both;
+  pointer-events: none;
+}
+@keyframes account-dropdown-open {
+  from { opacity: 0; transform: translateY(-7px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes account-dropdown-close {
+  to { opacity: 0; transform: translateY(-5px) scale(.99); }
+}
+.account-dropdown-identity {
+  display: grid;
+  gap: 5px;
+  padding: 20px 20px 16px;
+}
+.account-dropdown-eyebrow {
+  color: var(--muted);
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+.account-dropdown-identity strong,
+.account-dropdown-guest strong {
+  color: var(--chocolate);
+  font-family: var(--heading-font);
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.account-dropdown-email {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: .68rem;
+  text-overflow: ellipsis;
+}
+.account-dropdown-view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 9px;
+  border-radius: 7px;
+  padding: 10px 11px;
+  color: var(--chocolate);
+  background: var(--background-secondary);
+  font-size: .69rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+.account-dropdown-view svg,
+.account-dropdown-links a svg,
+.account-dropdown-footer button svg {
+  flex: none;
+  transition: transform 160ms ease;
+}
+.account-dropdown-view:hover svg { transform: translateX(3px); }
+.account-dropdown-links {
+  display: grid;
+  padding: 9px;
+  border-top: 1px solid var(--border);
+}
+.account-dropdown-links a,
+.account-dropdown-footer button {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 42px;
+  border: 0;
+  border-radius: 7px;
+  padding: 9px 11px;
+  color: var(--chocolate);
+  background: transparent;
+  font: inherit;
+  font-size: .7rem;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+.account-dropdown-links a:hover,
+.account-dropdown-links a:focus-visible,
+.account-dropdown-view:hover,
+.account-dropdown-view:focus-visible,
+.account-dropdown-footer button:hover,
+.account-dropdown-footer button:focus-visible,
+.account-dropdown-guest a:hover,
+.account-dropdown-guest a:focus-visible {
+  outline: 0;
+  background: var(--soft-peach);
+}
+.account-dropdown-links a:hover svg,
+.account-dropdown-links a:focus-visible svg,
+.account-dropdown-footer button:hover svg {
+  transform: translateX(2px);
+}
+.account-dropdown-footer {
+  border-top: 1px solid var(--border);
+  padding: 9px;
+}
+.account-dropdown-footer button { width: 100%; }
+.account-dropdown-footer button svg { color: #9a6f4d; }
+.account-dropdown-error {
+  margin: 0;
+  padding: 6px 11px;
+  color: #8f3023;
+  font-size: .65rem;
+}
+.account-dropdown-guest {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+}
+.account-dropdown-guest strong { margin-bottom: 3px; }
+.account-dropdown-guest a {
+  min-height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--chocolate);
+  font-size: .7rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 160ms ease;
+}
+.account-dropdown-guest a:first-of-type {
+  border-color: var(--peach);
+  background: var(--peach);
+  color: var(--espresso);
+}
+.account-dropdown-guest a:first-of-type:hover,
+.account-dropdown-guest a:first-of-type:focus-visible {
+  background: var(--soft-peach);
+}
+.account-dropdown-panel [data-account-item]:focus-visible {
+  outline: 2px solid var(--peach);
+  outline-offset: -2px;
+}
+@media (max-width: 540px) {
+  .account-dropdown-panel {
+    position: fixed;
+    top: 70px;
+    right: 12px;
+    width: min(360px, calc(100vw - 24px));
+    max-height: calc(100dvh - 86px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .account-dropdown-panel,
+  .account-dropdown-panel.is-closing {
+    animation: none;
+  }
+  .account-dropdown-view,
+  .account-dropdown-view svg,
+  .account-dropdown-links a,
+  .account-dropdown-links a svg,
+  .account-dropdown-footer button,
+  .account-dropdown-footer button svg {
+    transition: none;
+  }
+}

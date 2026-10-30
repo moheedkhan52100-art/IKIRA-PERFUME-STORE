@@ -1,0 +1,48 @@
+.account-page.login-page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  max-width: none;
+  min-height: min(740px, calc(100svh - 78px));
+  margin: 0;
+  padding: clamp(36px, 6vw, 72px) 24px;
+}
+
+.login-background-video {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.account-page.login-page::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(115deg, rgb(247 244 238 / 28%), rgb(247 244 238 / 12%));
+  content: '';
+}
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 22px 70px rgb(36 25 18 / 18%);
+  backdrop-filter: blur(5px);
+}
+
+:root[data-theme='dark'] .account-page.login-page::before {
+  background: linear-gradient(115deg, rgb(20 16 14 / 38%), rgb(20 16 14 / 20%));
+}
+
+:root[data-theme='dark'] .login-card {
+  box-shadow: 0 22px 70px rgb(0 0 0 / 38%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-background-video { display: none; }
+  .account-page.login-page::before { background: var(--background); }
+}

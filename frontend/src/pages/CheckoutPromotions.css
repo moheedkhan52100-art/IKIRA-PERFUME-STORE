@@ -1,0 +1,56 @@
+.checkout-promotion-form {
+  display: grid;
+  gap: 7px;
+  margin: 20px 0 14px;
+}
+
+.checkout-promotion-form > label {
+  color: var(--chocolate);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.checkout-promotion-form > div {
+  display: flex;
+  gap: 8px;
+}
+
+.checkout-promotion-form input {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  background: var(--ivory);
+  color: var(--chocolate);
+  font: inherit;
+  font-size: 0.72rem;
+}
+
+.checkout-promotion-form button {
+  flex: none;
+  border: 1px solid var(--border);
+  padding: 0 14px;
+  background: var(--background-secondary);
+  color: var(--chocolate);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.checkout-promotion-form button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.checkout-promotion-form p {
+  min-height: 1em;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.65rem;
+}
+
+.checkout-promotion-form p[role='alert'] {
+  color: #a33f34;
+}

@@ -1,0 +1,8 @@
+﻿.cart-toast{position:fixed;z-index:60;right:24px;bottom:88px;display:flex;align-items:center;gap:11px;width:min(360px,calc(100vw - 32px));padding:12px 13px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--chocolate);box-shadow:0 12px 36px #120d0b35;animation:cart-toast-in .2s ease-out}
+.cart-toast-check{display:grid;flex:none;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--soft-peach);color:var(--peach)}
+.cart-toast-copy{display:grid;flex:1;min-width:0;gap:2px}.cart-toast-copy strong{font-size:.72rem}.cart-toast-copy small{overflow:hidden;color:var(--muted);font-size:.62rem;text-overflow:ellipsis;white-space:nowrap}
+.cart-toast>a{color:var(--peach);font-size:.66rem;font-weight:700;text-decoration:none;white-space:nowrap}.cart-toast>a:hover{text-decoration:underline}
+.cart-toast>button{display:grid;flex:none;place-items:center;width:28px;height:28px;border:0;border-radius:50%;background:transparent;color:var(--muted);cursor:pointer}.cart-toast>button:hover{background:var(--background-secondary);color:var(--chocolate)}
+@keyframes cart-toast-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.cart-toast{right:12px;bottom:76px;width:min(360px,calc(100vw - 24px));padding:10px}}
+@media(prefers-reduced-motion:reduce){.cart-toast{animation:none}}

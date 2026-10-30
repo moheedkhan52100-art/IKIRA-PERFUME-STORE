@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap');
+
+:root {
+  --background: #f7f4ee;
+  --background-secondary: #eee8de;
+  --ivory: #fffdf8;
+  --peach: #b88954;
+  --soft-peach: #ead8bd;
+  --champagne: #d5b47b;
+  --chocolate: #382b25;
+  --espresso: #211814;
+  --muted: #74675d;
+  --card: #fffdf9;
+  --border: #e2d9cb;
+  --white: #fff;
+  --footer-background: #fff;
+  --header-background: rgb(255 253 248 / 92%);
+  --header-border: rgb(56 43 37 / 9%);
+  --body-font: 'Manrope', 'Segoe UI', sans-serif;
+  --heading-font: 'Cormorant Garamond', Georgia, serif;
+
+  font-family: var(--body-font);
+  color: var(--chocolate);
+  background: var(--background);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --background: #1e1a18;
+  --background-secondary: #2c2521;
+  --ivory: #28221e;
+  --peach: #d0a66d;
+  --soft-peach: #4c3b2d;
+  --champagne: #d8bd8b;
+  --chocolate: #f1e9df;
+  --espresso: #151210;
+  --muted: #b9aa9c;
+  --card: #28221e;
+  --border: #463a31;
+  --white: #342c26;
+  --footer-background: #342c26;
+  --header-background: rgb(30 26 24 / 92%);
+  --header-border: rgb(241 233 223 / 12%);
+  background: var(--background);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--background);
+  color: var(--chocolate);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--peach);
+  outline-offset: 4px;
+}
+
+::selection {
+  color: var(--espresso);
+  background: var(--soft-peach);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
